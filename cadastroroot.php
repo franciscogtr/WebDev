@@ -13,16 +13,16 @@
     <form action="login.php" method="get">
             <fieldset>
                 Credenciais
-                <br>
+                <br><br>
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" id="nome">
-                <br>
+                <br><br>
                 <label for="email">Email:</label>
                 <input type="email" name="email" id="email">
-                <br>
+                <br><br>
                 <label for="senha">Senha:</label>
                 <input type="password" name="senha" id="senha">
-                <br>
+                <br><br>
                 <button type="submit">Cadastrar</button>
             </fieldset>
         </form>
