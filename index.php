@@ -11,6 +11,10 @@
     </header>
     <main>
         <h2>Ambientes</h2>
+
+        <h3>Salas</h3>
+
+        <h3>Laboratórios</h3>
     </main>
     <footer>
         <p>&copy; Web Dev 2024</p>
