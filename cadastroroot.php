@@ -10,7 +10,7 @@
         <h1>Cadastro Admin</h1>
     </header>
     <main>
-    <form>
+    <form action>
             <fieldset>
                 Credenciais
                 <br><br>
@@ -26,14 +26,21 @@
                 <button type="submit">Cadastrar</button>
             </fieldset>
             <?php
-                require 'class/rb.php';
-              include 'conexaoBD.inc.php.php';
+            
+            if (isset($_GET['nome'])) {
+                
+                require_once 'class/rb.php';
+              include 'conexaoBD.inc.php';
 
               $usuario = R::dispense('usuario');
               $usuario->nome = $_GET['nome'];
               $usuario->email = $_GET['email'];
               $usuario->senha = $_GET['senha'];
               $usuario->admin = TRUE;
+
+              R::close();
+            }
+                
             ?>
         </form>
 
