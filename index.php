@@ -8,6 +8,9 @@
 <body>
     <header>
         <h1>Reserva de Ambientes</h1>
+        <div>
+            <a href="cadastrousuarios.php">Login</a>
+        </div>
     </header>
     <main>
         <h2>Ambientes</h2>

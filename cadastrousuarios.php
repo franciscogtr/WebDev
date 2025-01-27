@@ -23,6 +23,10 @@
                 <label for="senha">Senha:</label>
                 <input type="password" name="senha" id="senha">
                 <br><br>
+                <p>Administrador?
+                <input type="checkbox" name="admin" id="admin">
+                </p>
+                <br><br>
                 <button type="submit">Cadastrar</button>
             </fieldset>
             <?php
@@ -36,7 +40,7 @@
               $usuario->nome = $_GET['nome'];
               $usuario->email = $_GET['email'];
               $usuario->senha = $_GET['senha'];
-              $usuario->admin = TRUE;
+              $usuario->admin = $_GET['admin'];
               $id = R::store( $usuario);
               R::close();
             }
