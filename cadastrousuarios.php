@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <h1>Cadastro Admin</h1>
+        <h1>Cadastro Usuários</h1>
     </header>
     <main>
     <form action>

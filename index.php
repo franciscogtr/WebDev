@@ -9,7 +9,7 @@
     <header>
         <h1>Reserva de Ambientes</h1>
         <div>
-            <a href="cadastrousuarios.php">Login</a>
+            <a href="login.php">Login</a>
         </div>
     </header>
     <main>
