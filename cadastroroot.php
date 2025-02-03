@@ -1,52 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador</title>
 </head>
+
 <body>
     <header>
-        <h1>Cadastro Admin</h1>
+        <h1>Cadastro Root</h1>
     </header>
     <main>
-    <form action>
-            <fieldset>
-                Credenciais
-                <br><br>
-                <label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome">
-                <br><br>
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email">
-                <br><br>
-                <label for="senha">Senha:</label>
-                <input type="password" name="senha" id="senha">
-                <br><br>
-                <button type="submit">Cadastrar</button>
-            </fieldset>
-            <?php
-            
-            if (isset($_GET['nome'])) {
-                
-                require_once 'class/rb.php';
-              include 'conexaoBD.inc.php';
-            
-              $usuario = R::dispense('usuario');
-              $usuario->nome = $_GET['nome'];
-              $usuario->email = $_GET['email'];
-              $usuario->senha = $_GET['senha'];
-              $usuario->admin = TRUE;
-              $id = R::store( $usuario);
-              R::close();
-            }
-                
-            ?>
-        </form>
+
+        <?php
+
+        require_once 'class/rb.php';
+        include 'conexaoBD.inc.php';
+
+        $usuario = R::load('usuario', 1);
+        // echo $usuario->id;
+
+        if ($usuario->id == 0) {
+
+            $usuario = R::dispense('usuario');
+            $usuario->nome = 'root';
+            $usuario->email = 'root@mail.com';
+            $usuario->senha = 'asdf';
+            $usuario->admin = TRUE;
+            $id = R::store($usuario);
+
+            echo 'Cadastro realizado com sucesso"';
+        } else {
+            echo 'Usuário root já existe';
+        }
+
+        R::close();
+        ?>
 
     </main>
     <footer>
 
     </footer>
 </body>
+
 </html>
