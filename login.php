@@ -34,6 +34,11 @@ if (isset($_GET['senha']) && isset($_GET['email']) && isset($_GET['nome'])) {
         $_SESSION['senha'] = $usuario->senha;
         $_SESSION['admin'] = $usuario->admin;
 
+        // echo $_SESSION['nome'];
+        // echo $_SESSION['email'];
+        // echo $_SESSION['senha'];
+        // echo $_SESSION['admin'];
+
         header('Location:index.php');
     } else {
         echo 'usuario não cadastrado, ACESSO NEGADO';
