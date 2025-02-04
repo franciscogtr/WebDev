@@ -22,17 +22,22 @@
 require_once 'class/rb.php';
 include 'inc/conexaoBD.inc.php';
 
-if (isset($_GET['senha'])) {
-    
+if (isset($_GET['senha']) && isset($_GET['email']) && isset($_GET['nome'])) {
+
     $usuario  = R::findOne('usuario', ' email = ? ', [$_GET['email']]);
-    // echo $usuario;
+    R::close();
+
+    if ($usuario) {
+        session_start();
+        $_SESSION['nome'] = $usuario->nome;
+        $_SESSION['email'] = $usuario->email;
+        $_SESSION['senha'] = $usuario->senha;
+        $_SESSION['admin'] = $usuario->admin;
+
+        header('Location:index.php');
+    } else {
+        echo 'usuario não cadastrado, ACESSO NEGADO';
+    }
 }
 
-// session_start();
-
-
-// $_SESSION['nome'] = $_GET['nome'];
-// $_SESSION['email'] = $_GET['email'];
-// $_SESSION['senha'] = $_GET['senha'];
-
-// header('Location:index.php');
+?>
