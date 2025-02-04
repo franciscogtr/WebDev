@@ -26,7 +26,7 @@ if (isset($_GET['senha']) && isset($_GET['email'])) {
 
     if ($usuario) {
 
-        if ($usuario->senha == $_GET['senha']) {
+        if (password_verify( $_GET['senha'], $usuario->senha)) {
 
             session_start();
 
