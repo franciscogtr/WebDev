@@ -15,9 +15,6 @@
             ?>
         </div>
         
-        <div>
-            <button type="button"><a href="login.php">Login</a></button>
-        </div>
     </header>
     <main>
         <h2>Ambientes</h2>

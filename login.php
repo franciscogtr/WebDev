@@ -1,4 +1,16 @@
-<form method="get">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <header>
+        
+    </header>
+    <main>
+    <form method="get">
     <fieldset>
         <h2>Credenciais</h2>
         <br><br>
@@ -54,3 +66,9 @@ if (isset($_GET['senha']) && isset($_GET['email'])) {
 }
 
 ?>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

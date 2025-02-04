@@ -8,6 +8,12 @@ $hora = new DateTime();
 
 if (!isset($_SESSION['nome'])) {
    echo '<h2>' . 'Bom dia, Visitante!' . '</h2>';
+
+   ?>
+      <div>
+            <button type="button"><a href="login.php">Login</a></button>
+        </div>
+   <?php
 } else {
 
    if ($hora->format('H') < 12) {
@@ -21,4 +27,14 @@ if (!isset($_SESSION['nome'])) {
    if ($hora->format('H') > 18 && $hora->format('H') < 24) {
       echo '<h2>' . 'Boa noite, ' . $_SESSION['nome'] . '!</h2>';
    }
+
+   ?>
+      <div>
+            <button type="button"><a href="logout.php">Logout</a></button>
+        </div>
+   <?php
 }
+
+
+
+
