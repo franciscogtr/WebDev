@@ -31,38 +31,38 @@
                 <br><br>
                 <button type="submit">Cadastrar</button>
             </fieldset>
-            <?php
-
-            if (isset($_GET['nome']) && isset($_GET['email']) && isset($_GET['senha'])) {
-
-                require_once 'class/rb.php';
-                include 'inc/conexaoBD.inc.php';
-
-                $usuario  = R::findOne('usuario', ' email = ? ', [$_GET['email']]);
-
-                // filtro para não cadastrar emails iguais, pois email é a chave de busca em login.php
-
-                if ($usuario) {
-                    echo 'email já cadastrado';
-                } else {
-                    $usuario = R::dispense('usuario');
-                    $usuario->nome = $_GET['nome'];
-                    $usuario->email = $_GET['email'];
-                    $usuario->senha = password_hash( $_GET['senha'], PASSWORD_DEFAULT);
-                    $usuario->admin = $_GET['admin'];
-                    $id = R::store($usuario);
-                    R::close();
-                    echo 'usuario cadastrado com sucesso';
-                }
-            }
-
-            ?>
         </form>
 
     </main>
     <footer>
-    <?php include 'inc/rodape.inc.php'?>
+        <?php include 'inc/rodape.inc.php' ?>
     </footer>
 </body>
 
 </html>
+<?php
+
+if (isset($_GET['nome']) && isset($_GET['email']) && isset($_GET['senha'])) {
+
+    require_once 'class/rb.php';
+    include 'inc/conexaoBD.inc.php';
+
+    $usuario  = R::findOne('usuario', ' email = ? ', [$_GET['email']]);
+
+    // filtro para não cadastrar emails iguais, pois email é a chave de busca em login.php
+
+    if ($usuario) {
+        echo 'email já cadastrado';
+    } else {
+        $usuario = R::dispense('usuario');
+        $usuario->nome = $_GET['nome'];
+        $usuario->email = $_GET['email'];
+        $usuario->senha = password_hash($_GET['senha'], PASSWORD_DEFAULT);
+        $usuario->admin = $_GET['admin'];
+        $id = R::store($usuario);
+        R::close();
+        echo 'Usuario cadastrado com sucesso!';
+    }
+}
+
+?>
