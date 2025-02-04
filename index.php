@@ -8,6 +8,12 @@
 <body>
     <header>
         <h1>Reserva de Ambientes</h1>
+
+        <div>
+            <?php
+            include 'inc/cabecalho.inc.php'
+            ?>
+        </div>
         
         <div>
             <a href="login.php">Login</a>

@@ -1,6 +1,6 @@
 <form method="get">
     <fieldset>
-        Credenciais
+        <h2>Credenciais</h2>
         <br><br>
         <label for="nome">Nome:</label>
         <input type="text" name="nome" id="nome">
