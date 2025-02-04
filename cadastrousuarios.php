@@ -48,7 +48,7 @@
                     $usuario = R::dispense('usuario');
                     $usuario->nome = $_GET['nome'];
                     $usuario->email = $_GET['email'];
-                    $usuario->senha = $_GET['senha'];
+                    $usuario->senha = password_hash( $_GET['senha'], PASSWORD_DEFAULT);
                     $usuario->admin = $_GET['admin'];
                     $id = R::store($usuario);
                     R::close();

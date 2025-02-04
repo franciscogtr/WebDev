@@ -26,7 +26,7 @@
             $usuario = R::dispense('usuario');
             $usuario->nome = 'root';
             $usuario->email = 'root@mail.com';
-            $usuario->senha = 'asdf';
+            $usuario->senha = password_hash('asdf', PASSWORD_DEFAULT);
             $usuario->admin = TRUE;
             $id = R::store($usuario);
 
