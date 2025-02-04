@@ -20,7 +20,7 @@
 </form>
 <?php
 require_once 'class/rb.php';
-include 'conexaoBD.inc.php';
+include 'inc/conexaoBD.inc.php';
 
 if (isset($_GET['senha'])) {
     

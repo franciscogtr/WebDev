@@ -16,7 +16,7 @@
         <?php
 
         require_once 'class/rb.php';
-        include 'conexaoBD.inc.php';
+        include 'inc/conexaoBD.inc.php';
 
         $usuario = R::load('usuario', 1);
         // echo $usuario->id;

@@ -34,7 +34,7 @@
             if (isset($_GET['nome'])) {
                 
                 require_once 'class/rb.php';
-              include 'conexaoBD.inc.php';
+              include 'inc/conexaoBD.inc.php';
             
               $usuario = R::dispense('usuario');
               $usuario->nome = $_GET['nome'];
