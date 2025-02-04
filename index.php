@@ -27,7 +27,7 @@
         <h3>Laboratórios</h3>
     </main>
     <footer>
-        <p>&copy; Web Dev 2024</p>
+       <?php include 'inc/rodape.inc.php'?>
     </footer>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -61,7 +61,7 @@
 
     </main>
     <footer>
-
+    <?php include 'inc/rodape.inc.php'?>
     </footer>
 </body>
 
