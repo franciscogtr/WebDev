@@ -1,3 +1,27 @@
-header{
-    border: 3px, solid, #1E2026;
+nav{
+    background-color:#F2F2F2;
+    border-bottom: 2px solid #1E2026 ;
+} 
+body {
+background-color: #F2F2F2;
+}
+
+.aheader{
+    color: #1E2026;
+    text-decoration: none;
+    float: left;
+    border: solid red;
+    padding: 0 0.5em;
+}
+
+.cabecalho{
+    color: #1E2026;
+    float: rigth;
+    border: solid red;
+    padding-right: 0%;
+
+}
+
+.divheader{
+    border: solid blue;  
 }

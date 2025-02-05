@@ -1,3 +1,6 @@
+<head>
+   <link rel="stylesheet" href="stylesheet.css">
+</head>
 <?php
 session_start();
 
@@ -7,7 +10,7 @@ $hora = new DateTime();
 // echo $hora->format('H');
 
 if (!isset($_SESSION['nome'])) {
-   echo '<h2>' . 'Bom dia, Visitante!' . '</h2>';
+   echo '<h3 class="cabecalho">' . 'Bom dia, Visitante!' . '</h3>';
 
    ?>
       <div>
@@ -17,15 +20,15 @@ if (!isset($_SESSION['nome'])) {
 } else {
 
    if ($hora->format('H') < 12) {
-      echo '<h2>' . 'Bom dia, ' . $_SESSION['nome'] . '!</h2>';
+      echo '<h3 class="cabecalho">' . 'Bom dia, ' . $_SESSION['nome'] . '!</h3>';
    }
 
    if ($hora->format('H') > 12 && $hora->format('H') < 18) {
-      echo '<h2>' . 'Boa tarde, ' . $_SESSION['nome'] . '!</h2>';
+      echo '<h3 class="cabecalho">' . 'Boa tarde, ' . $_SESSION['nome'] . '!</h3>';
    }
 
    if ($hora->format('H') > 18 && $hora->format('H') < 24) {
-      echo '<h2>' . 'Boa noite, ' . $_SESSION['nome'] . '!</h2>';
+      echo '<h3 class="cabecalho">' . 'Boa noite, ' . $_SESSION['nome'] . '!</h3>';
    }
 
    ?>

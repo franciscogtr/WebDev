@@ -14,18 +14,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserva de Ambientes</title>
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-    <header>
-        <h1>Reserva de Ambientes</h1>
+    <nav>
+        
+    <h3><a class="aheader" href="calendario.php">Calendário</a></h3>
+    <h3><a class="aheader" href="minhssreservas.php">Minhas Reservas</a></h3>
+    <h3><a class="aheader" href="sobre.php">Cadastro Ambiente</a></h3>
+    <h3><a class="aheader" href="sobre.php">Cadastro Usuário</a></h3>
+    <h3><a class="aheader" href="sobre.php">Sobre</a></h3>
 
-        <div>
+        <div class="divheader">
             <?php
             include 'inc/cabecalho.inc.php'
             ?>
         </div>
         
-    </header>
+</nav>
     <main>
         <h2>Ambientes</h2>
 
