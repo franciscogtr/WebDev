@@ -9,19 +9,14 @@ background-color: #F2F2F2;
 .aheader{
     color: #1E2026;
     text-decoration: none;
+    border: solid blue;
     float: left;
-    border: solid red;
     padding: 0 0.5em;
 }
 
-.cabecalho{
+select {
+    border: none;
     color: #1E2026;
-    float: rigth;
-    border: solid red;
-    padding-right: 0%;
-
+    background-color: #F2F2F2;
 }
 
-.divheader{
-    border: solid blue;  
-}
