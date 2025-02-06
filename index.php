@@ -16,35 +16,37 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserva de Ambientes</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <nav>
+    <header>
+    <?php
+            include 'inc/cabecalho.inc.php'
+            ?>
+        <nav>
+            <a class="aheader" href="calendario.php">Calendário</a>
+            <a class="aheader" href="minhssreservas.php">Minhas Reservas</a>
+            <select id="cadastrar" onchange="redirecionarPagina()">
+                <option value="">Cadastrar</option>
+                <option value="cadastroambiente.php">Ambiente</option>
+                <option value="cadastrousuario.php">Usuário</option>
+            </select>
+            <script>
+                function redirecionarPagina() {
+                    var select = document.getElementById("cadastrar");
+                    var valor = select.value;
+                    if (valor) {
+                        window.location.href = valor; // Redireciona para a página selecionada
+                    }
+                }
+            </script>
+            <a class="aheader" href="sobre.php">Sobre</a></p>
 
-        <a class="aheader" href="calendario.php">Calendário</a>
-        <a class="aheader" href="minhssreservas.php">Minhas Reservas</a>
-        <select id="cadastrar" onchange="redirecionarPagina()">
-        <option value="">Cadastrar</option>
-        <option value="cadastroambiente.php">Ambiente</option>
-        <option value="cadastrousuario.php">Usuário</option>
-        </select>
+        </nav>
+    </header>
 
-    <script>
-        function redirecionarPagina() {
-            var select = document.getElementById("cadastrar");
-            var valor = select.value;
-            if (valor) {
-                window.location.href = valor;  // Redireciona para a página selecionada
-            }
-        }
-    </script>
-        <a class="aheader" href="sobre.php">Sobre</a></p>
 
-        <?php
-        include 'inc/cabecalho.inc.php'
-        ?>
-
-    </nav>
     <main>
         <h2>Ambientes</h2>
 
