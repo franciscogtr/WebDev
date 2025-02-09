@@ -14,7 +14,7 @@ session_start();
 date_default_timezone_set('America/Fortaleza');
 
 $hora = new DateTime();
-// echo $hora->format('H');
+//echo $hora->format('H');
 
 if (!isset($_SESSION['nome'])) {
    echo '<h2 class="cabecalho">' . 'Olá, Visitante!' . '</h2>';
@@ -30,11 +30,11 @@ if (!isset($_SESSION['nome'])) {
       echo '<h2 class="cabecalho">' . 'Bom dia, ' . $_SESSION['nome'] . '!</h2>';
    }
 
-   if ($hora->format('H') > 12 && $hora->format('H') < 18) {
+   if ($hora->format('H') >= 12 && $hora->format('H') < 18) {
       echo '<h2 class="cabecalho">' . 'Boa tarde, ' . $_SESSION['nome'] . '!</h2>';
    }
 
-   if ($hora->format('H') > 18 && $hora->format('H') < 24) {
+   if ($hora->format('H') >= 18 && $hora->format('H') < 24) {
       echo '<h2 class="cabecalho">' . 'Boa noite, ' . $_SESSION['nome'] . '!</h2>';
    }
 

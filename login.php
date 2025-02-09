@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
-        
+    
     </header>
     <main>
     <form method="get">
     <fieldset>
-        <h2>Credenciais</h2>
+        <h2 class="login">Login</h2>
         <br><br>
         <label for="email">Email:</label>
         <input type="email" name="email" id="email">
@@ -20,7 +23,7 @@
         <label for="senha">Senha:</label>
         <input type="password" name="senha" id="senha">
         <br><br>
-        <p>Administrador?
+        <p id="padmin">Administrador?
             <input type="checkbox" name="admin" id="admin">
         </p>
         <br><br>
@@ -40,14 +43,21 @@ if (isset($_GET['senha']) && isset($_GET['email'])) {
 
         if (password_verify( $_GET['senha'], $usuario->senha)) {
 
-            session_start();
+            if ($_GET['admin'== $usuario->admin]) {
+            
+                session_start();
 
             $_SESSION['nome'] = $usuario->nome;
             $_SESSION['email'] = $usuario->email;
             $_SESSION['senha'] = $usuario->senha;
             $_SESSION['admin'] = $usuario->admin;
-
             header('Location:index.php');
+
+            }else{
+                echo 'A opção de Administrador foi
+                preenchida INCORRETAMENTE';
+            }
+
         } else {
             echo 'senha incorreta';
         }

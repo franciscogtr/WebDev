@@ -30,7 +30,7 @@
             $usuario->admin = TRUE;
             $id = R::store($usuario);
 
-            echo 'Cadastro realizado com sucesso"';
+            echo 'Cadastro realizado com sucesso!';
         } else {
             echo 'Usuário root já existe';
         }

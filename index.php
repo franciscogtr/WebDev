@@ -12,7 +12,7 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" http-equiv="refresh" content="5">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserva de Ambientes</title>
     <link rel="stylesheet" href="stylesheet.css">
@@ -49,6 +49,7 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
 
     <main>
         <h2>Ambientes</h2>
+        
 
         <h3>Salas</h3>
 

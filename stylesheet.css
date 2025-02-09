@@ -1,6 +1,8 @@
 *{
     font-family: 'Montserrat', sans-serif;
 }
+
+/*Estilizaçaão de Index*/
 header{
     background-color:#F2F2F2;
     border-bottom: 2px solid #1E2026 ;
@@ -49,7 +51,7 @@ option:hover{
 }
 .cabecalho{
     display: block;
-    /* border: solid red; */
+    /*border: solid red;*/
     font-weight: bold;
     margin: 0 auto;
     text-align: center;
@@ -58,11 +60,13 @@ option:hover{
 }
 button{
     background-color: #3876F2;
+    color:#F2F2F2;
+    font-weight: bold;
     border: none;
     width: 5em;
     height: 2em;
     display: inline;
-    float:inline-end;
+    float:right;
 }
 
 .acabecalho{
@@ -80,3 +84,27 @@ button{
         
     }
 
+/*Estilizaçaão de Login*/
+
+label{
+    
+    color:#1E2026;
+}
+
+input {
+    
+    background-color:#F2F2F2;
+}
+.login{
+    color:#3876F2;
+}
+
+form{
+    background-color: #F2F2F2;
+    width: 50%;
+    margin: 5em auto;
+}
+
+#padmin{
+    color:#1E2026;
+}
