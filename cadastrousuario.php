@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <h1>Cadastro Usuários</h1>
+        
     </header>
     <main>
         <form action>
             <fieldset>
-                Credenciais
+            <h2 class="form">Cadastrar Usuário</h2>
                 <br><br>
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" id="nome">
@@ -32,6 +34,36 @@
                 <button type="submit">Cadastrar</button>
             </fieldset>
         </form>
+        <?php
+
+        if (isset($_GET['nome']) && isset($_GET['email']) && isset($_GET['senha'])) {
+
+            require_once 'class/rb.php';
+            include 'inc/conexaoBD.inc.php';
+
+            $usuario  = R::findOne('usuario', ' email = ? ', [$_GET['email']]);
+            //echo $usuario;
+
+            // filtro para não cadastrar emails iguais, pois email é a chave de busca em login.php
+
+            if ($usuario) {
+
+                echo 'email já cadastrado';
+
+            } else {
+
+                $usuario = R::dispense('usuario');
+                $usuario->nome = $_GET['nome'];
+                $usuario->email = $_GET['email'];
+                $usuario->senha = password_hash($_GET['senha'], PASSWORD_DEFAULT);
+                $usuario->admin = $_GET['admin'];
+                $id = R::store($usuario);
+                R::close();
+                echo 'Usuario cadastrado com sucesso!';
+            }
+        }
+
+        ?>
 
     </main>
     <footer>
@@ -40,29 +72,3 @@
 </body>
 
 </html>
-<?php
-
-if (isset($_GET['nome']) && isset($_GET['email']) && isset($_GET['senha'])) {
-
-    require_once 'class/rb.php';
-    include 'inc/conexaoBD.inc.php';
-
-    $usuario  = R::findOne('usuario', ' email = ? ', [$_GET['email']]);
-
-    // filtro para não cadastrar emails iguais, pois email é a chave de busca em login.php
-
-    if ($usuario) {
-        echo 'email já cadastrado';
-    } else {
-        $usuario = R::dispense('usuario');
-        $usuario->nome = $_GET['nome'];
-        $usuario->email = $_GET['email'];
-        $usuario->senha = password_hash($_GET['senha'], PASSWORD_DEFAULT);
-        $usuario->admin = $_GET['admin'];
-        $id = R::store($usuario);
-        R::close();
-        echo 'Usuario cadastrado com sucesso!';
-    }
-}
-
-?>

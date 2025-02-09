@@ -15,7 +15,7 @@
     <main>
     <form method="get">
     <fieldset>
-        <h2 class="login">Login</h2>
+        <h2 class="form">Login</h2>
         <br><br>
         <label for="email">Email:</label>
         <input type="email" name="email" id="email">
@@ -43,17 +43,19 @@ if (isset($_GET['senha']) && isset($_GET['email'])) {
 
         if (password_verify( $_GET['senha'], $usuario->senha)) {
 
-            if ($_GET['admin'== $usuario->admin]) {
+            if ($usuario->admin == $_GET['admin']) {
             
                 session_start();
 
-            $_SESSION['nome'] = $usuario->nome;
-            $_SESSION['email'] = $usuario->email;
-            $_SESSION['senha'] = $usuario->senha;
-            $_SESSION['admin'] = $usuario->admin;
+                $_SESSION['nome'] = $usuario->nome;
+                $_SESSION['email'] = $usuario->email;
+                $_SESSION['senha'] = $usuario->senha;
+                $_SESSION['admin'] = $usuario->admin;
             header('Location:index.php');
 
-            }else{
+            }
+            else{
+
                 echo 'A opção de Administrador foi
                 preenchida INCORRETAMENTE';
             }

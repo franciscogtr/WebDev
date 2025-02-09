@@ -63,7 +63,7 @@ button{
     color:#F2F2F2;
     font-weight: bold;
     border: none;
-    width: 5em;
+    width: 6em;
     height: 2em;
     display: inline;
     float:right;
@@ -95,7 +95,7 @@ input {
     
     background-color:#F2F2F2;
 }
-.login{
+.form{
     color:#3876F2;
 }
 

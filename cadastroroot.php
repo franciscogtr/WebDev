@@ -27,7 +27,7 @@
             $usuario->nome = 'root';
             $usuario->email = 'root@mail.com';
             $usuario->senha = password_hash('asdf', PASSWORD_DEFAULT);
-            $usuario->admin = TRUE;
+            $usuario->admin = 'on';
             $id = R::store($usuario);
 
             echo 'Cadastro realizado com sucesso!';

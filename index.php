@@ -27,7 +27,9 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
         <nav>
             <a class="aheader" href="calendario.php">Calendário</a>
             <a class="aheader" href="minhssreservas.php">Minhas Reservas</a>
-            <select id="cadastrar" onchange="redirecionarPagina()">
+            <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] === 'on'): ?>
+                    
+                <select id="cadastrar" onchange="redirecionarPagina()">
                 <option value="">Cadastrar</option>
                 <option value="cadastroambiente.php">Ambiente</option>
                 <option value="cadastrousuario.php">Usuário</option>
@@ -41,6 +43,10 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
                     }
                 }
             </script>
+
+                <?php endif; ?>
+                <select style="color:#f2f2f2"></select>
+            
             <a class="aheader" href="sobre.php">Sobre</a></p>
 
         </nav>
