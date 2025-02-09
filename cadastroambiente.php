@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -12,19 +14,21 @@
     <main>
         <form method="get">
             <fieldset>
-                <h2>Cadastrar Ambiente</h2>
+                <h2 class="form">Cadastrar Ambiente</h2>
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" id="nome">
                 <br><br>
                 <label for="imagem">Foto do ambiente:</label>
-                <input type="file" name="imagem" id="imagem">
+                <input class="ambiente" type="file" name="imagem" id="imagem">
                 <br><br>
                 <label for="tipo">Tipo de ambiente:</label>
-                <select name="tipo" id="tipo">
+                <select class="ambiente" name="tipo" id="tipo">
+                <option value="">Selecionar</option>
                     <option value="lab">Laboratório</option>
                     <option value="sal">Sala</option>
                 </select>
                 <br><br>
+                <a href="index.php" class="voltar">Home</a>
                 <button type="submit">Cadastrar</button>
             </fieldset>
         </form>

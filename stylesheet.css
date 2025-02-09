@@ -31,7 +31,7 @@ select {
     border: none;
     color: #1E2026;
     background-color: #F2F2F2;
-    font-size: 16px;
+    font-size: 15.5px;
     display: inline;
     font-weight: bold;
   
@@ -84,7 +84,7 @@ button{
         
     }
 
-/*Estilizaçaão de Login*/
+/*Estilizaçaão de Login e forms em geral*/
 
 label{
     
@@ -107,4 +107,28 @@ form{
 
 #padmin{
     color:#1E2026;
+}
+
+/*Estilizaçaão de Cadastro Ambiente*/
+
+.ambiente{
+    
+    border:none;
+    color: #1E2026;
+    background-color: #F2F2F2;
+    font-size: 15px;
+    display: inline;
+    font-weight: bold;
+}
+
+/*Estilizaçaão de Home(Voltar) nos formulários*/
+
+.voltar{
+    text-decoration: none;
+    font-weight: bold;
+    color:#1E2026;
+}
+
+.voltar:hover{
+    color: #3876F2;
 }
