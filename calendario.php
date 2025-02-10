@@ -4,52 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendário</title>
-    <style>
-        table {
-            text-align: center;
-        }
+    <title>Reserva Ambientes</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
-        td {
-            padding-left: 5px;
-            padding-right: 5px;
-
-        }
-
-        th {
-            color: white;
-            background-color: black;
-            padding-left: 5px;
-            padding-right: 5px;
-
-        }
-
-
-        #calendario {
-            color: black;
-            text-decoration: none;
-        }
-
-        #calendario:hover {
-            color: red;
-        }
-
-        tr:nth-child(even) {
-            background-color: #C7C7C7;
-        }
-    </style>
 </head>
 
 <body>
     <header>
         <?php
-        include 'inc/cabecalho.inc.php';
-        // include 'validaracesso.php';
+
         ?>
     </header>
 
     <main>
-        <h1>Calendário</h1>
+        <h2>Escolha um mês para reservar</h2>
 
         <?php
         date_default_timezone_set('America/Fortaleza');
@@ -57,8 +26,8 @@
         $data = $hoje->format('Y-m');
 
         ?>
-        <form>
-            <input type="month" name="mes" id="mes"
+        <form id="formMes">
+            <input id="inputMes" type="month" name="mes" id="mes"
                 min="<?= $data; ?>"
                 onchange="submit()">
         </form>
@@ -68,6 +37,53 @@
 
             $data = $_GET['mes'];
             $dataCompleta =  new DateTime($data);
+
+            $strdata = $_GET['mes'];
+                        $data = new DateTime($strdata);
+                        // echo $data->format('m');
+
+                        switch ($data->format('m')) {
+                            case '1':
+                                $mes = 'Janeiro';
+                                break;
+                                case '2':
+                                    $mes = 'Fevereiro';
+                                    break;
+                                    case '3':
+                                        $mes = 'Março';
+                                        break;
+                                        case '4':
+                                            $mes = 'Abril';
+                                            break;
+                                            case '5':
+                                                $mes = 'Maio';
+                                                break;
+                                                case '6':
+                                                    $mes = 'Junho';
+                                                    break;
+                                                    case '7':
+                                                        $mes = 'Julho';
+                                                        break;
+                                                        case '8':
+                                                            $mes = 'Agosto';
+                                                            break;
+                                                            case '9':
+                                                                $mes = 'Setembro';
+                                                                break;
+                                                                case '10':
+                                                                    $mes = 'Outubro';
+                                                                    break;
+                                                                    case '11':
+                                                                        $mes = 'Novembro';
+                                                                        break;
+                                                                        case '12':
+                                                                            $mes = 'Dezembro';
+                                                                            break;
+                                                                    
+                            
+                        }
+
+                        echo '<h1 id="data">' . $mes . ' de ' . $data->format('Y') . '</h1>';
 
         ?>
             <table>
@@ -81,10 +97,9 @@
                     <th>Sab</th>
                 </thead>
                 <tbody>
+
                     <tr>
                         <?php
-                        $strdata = $_GET['mes'];
-                        $data = new DateTime($strdata);
 
                         $espacoinicio =  $data->format('w');
                         // echo $data->format('t');
@@ -132,7 +147,7 @@
     </main>
     <footer>
         <?php
-        include 'inc/rodape.inc.php'
+
         ?>
     </footer>
 </body>
