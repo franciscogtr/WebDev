@@ -25,7 +25,7 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
             include 'inc/cabecalho.inc.php'
             ?>
         <nav>
-            <a class="aheader" href="calendario.php">Calendário</a>
+            <a class="aheader" href="calendario.php">Reservar</a>
             <a class="aheader" href="minhassreservas.php">Minhas Reservas</a>
             <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] === 'on'): ?>
                     
@@ -45,7 +45,8 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
             </script>
 
                 <?php endif; ?>
-                <select style="color:#f2f2f2"></select>
+                <!-- Caixa seletora oculta para alinhamento do cabeçalho -->
+                <select style="color:#f2f2f2"></select> 
             
             <a class="aheader" href="sobre.php">Sobre</a></p>
 

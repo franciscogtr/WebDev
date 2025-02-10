@@ -100,9 +100,11 @@ input {
 }
 
 form{
+    
     background-color: #F2F2F2;
     width: 50%;
     margin: 5em auto;
+    /* border: solid red; */
 }
 
 #padmin{
@@ -131,4 +133,44 @@ form{
 
 .voltar:hover{
     color: #3876F2;
+}
+
+/*Estilizaçaão do Calendário*/
+
+#formMes{
+    display: flex;
+            justify-content: center; /* Alinha horizontalmente no centro */
+            align-items:baseline; /* Alinha verticalmente no centro */
+            margin: 0 auto;
+}
+table {
+    text-align: center;
+}
+
+td {
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+th {
+    color: white;
+    background-color: black;
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+
+#calendario {
+    color: black;
+    text-decoration: none;
+}
+
+#calendario:hover {
+    color: red;
+}
+
+tr:nth-child(even) {
+    background-color: #C7C7C7;
 }
