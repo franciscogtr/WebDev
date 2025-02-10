@@ -7,13 +7,76 @@
     <title>Reserva Ambientes</title>
     <link rel="stylesheet" href="stylesheet.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        #formMes{
+    display: flex;
+            justify-content: center; /* Alinha horizontalmente no centro */
+            align-items:baseline; /* Alinha verticalmente no topo */
+            margin: 0 auto;
+            
 
+}
+table {
+    justify-content: center; /* Alinha horizontalmente no centro */
+    border: solid #000000;
+    text-align: center;
+    margin: 0 auto;
+    border-collapse: separate;
+}
+
+td {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-weight: bold;
+    
+
+}
+
+th {
+    color: #F2F2F2;
+    background-color: #3876F2;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    
+
+}
+
+
+#calendario {
+    color: black;
+    text-decoration: none;
+}
+
+#calendario:hover {
+    color: #3876F2;
+}
+
+tr:nth-child(even) {
+    background-color: #C7C7C7;
+}
+
+#data{
+    text-align: center;
+}
+
+input[type="month"] {
+    background-color: #3876F2;
+    color: #F2F2F2;
+    border: 2px solid #333;
+    padding: 8px;
+    border-radius: 5px;
+}
+    </style>
 </head>
 
 <body>
     <header>
         <?php
-
+            //include 'inc/cabecalho.inc.php';
         ?>
     </header>
 
@@ -27,7 +90,7 @@
 
         ?>
         <form id="formMes">
-            <input id="inputMes" type="month" name="mes" id="mes"
+            <input type="month" name="mes" id="mes"
                 min="<?= $data; ?>"
                 onchange="submit()">
         </form>
@@ -130,7 +193,7 @@
                         }
                         echo '<br>' . '<br>';
 
-                        $strdatafim = '2039-07-' . $totaldias;
+                        $strdatafim = '2039-07' . $totaldias;
                         $data = new DateTime($strdatafim);
                         $espacofim = $data->format('w');
                         for ($i = ++$espacofim; $i < 7; $i++) {

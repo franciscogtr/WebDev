@@ -135,50 +135,5 @@ form{
     color: #3876F2;
 }
 
-/*Estilizaçaão do Calendário*/
+/*Estilizaçaão do Calendário está no head Trazer pra cá futuramente*/
 
-#formMes{
-    display: flex;
-            justify-content: center; /* Alinha horizontalmente no centro */
-            align-items:baseline; /* Alinha verticalmente no centro */
-            margin: 0 auto;
-}
-table {
-    border: solid red;
-    text-align: center;
-    margin: 0 auto;
-}
-
-td {
-    padding-left: 5px;
-    padding-right: 5px;
-    font-weight: bold;
-    
-
-}
-
-th {
-    color: #F2F2F2;
-    background-color: #3876F2;
-    padding-left: 5px;
-    padding-right: 5px;
-
-}
-
-
-#calendario {
-    color: black;
-    text-decoration: none;
-}
-
-#calendario:hover {
-    color: #3876F2;
-}
-
-tr:nth-child(even) {
-    background-color: #C7C7C7;
-}
-
-#data{
-    text-align: center;
-}
