@@ -4,21 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserva Ambientes</title>
-    <link rel="stylesheet" href="stylesheet.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Calendário</title>
+    <style>
+        table {
+            text-align: center;
+        }
 
+        td {
+            padding-left: 5px;
+            padding-right: 5px;
+
+        }
+
+        th {
+            color: white;
+            background-color: black;
+            padding-left: 5px;
+            padding-right: 5px;
+
+        }
+
+
+        #calendario {
+            color: black;
+            text-decoration: none;
+        }
+
+        #calendario:hover {
+            color: red;
+        }
+
+        tr:nth-child(even) {
+            background-color: #C7C7C7;
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <?php
-        
+        include 'inc/cabecalho.inc.php';
+        // include 'validaracesso.php';
         ?>
     </header>
 
     <main>
-        <h2>Escolha um mês para reservar</h2>
+        <h1>Calendário</h1>
 
         <?php
         date_default_timezone_set('America/Fortaleza');
@@ -26,8 +57,8 @@
         $data = $hoje->format('Y-m');
 
         ?>
-        <form id="formMes">
-            <input id="inputMes" type="month" name="mes" id="mes"
+        <form>
+            <input type="month" name="mes" id="mes"
                 min="<?= $data; ?>"
                 onchange="submit()">
         </form>
@@ -101,7 +132,7 @@
     </main>
     <footer>
         <?php
-        
+        include 'inc/rodape.inc.php'
         ?>
     </footer>
 </body>
