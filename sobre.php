@@ -6,14 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-
-    </header>
-    <body>
-        criadores:
-    </body>
-    <footer>
-        
-    </footer>
+    
 </body>
+
+<?php include 'inc/cabecalho.inc.php'; ?>
+<h1>Sobre a Equipe</h1>
+<article>
+    <img src="assets/team1.jpg" alt="Membro 1" class="circular">
+    <h2>Nome do Membro 1</h2>
+    <p>Email: membro1@example.com</p>
+</article>
+
 </html>
