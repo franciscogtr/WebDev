@@ -23,10 +23,6 @@
         <label for="senha">Senha:</label>
         <input type="password" name="senha" id="senha">
         <br><br>
-        <p id="padmin">Administrador?
-        <input type="checkbox" name="admin" id="admin">
-        </p>
-        <br><br>
         <button type="submit">Entrar</button>
     </fieldset>
 </form>
@@ -43,7 +39,6 @@ if (isset($_GET['senha']) && isset($_GET['email'])) {
 
         if (password_verify( $_GET['senha'], $usuario->senha)) {
 
-            if ($usuario->admin == $_GET['admin']) {
             
                 session_start();
 
@@ -54,13 +49,9 @@ if (isset($_GET['senha']) && isset($_GET['email'])) {
             header('Location:index.php');
 
             }
-            else{
+           
 
-                echo 'A opção de Administrador foi
-                preenchida INCORRETAMENTE';
-            }
-
-        } else {
+         else {
             echo 'senha incorreta';
         }
 
