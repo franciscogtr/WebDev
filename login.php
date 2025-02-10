@@ -24,7 +24,7 @@
         <input type="password" name="senha" id="senha">
         <br><br>
         <p id="padmin">Administrador?
-            <input type="checkbox" name="admin" id="admin">
+        <input type="checkbox" name="admin" id="admin">
         </p>
         <br><br>
         <button type="submit">Entrar</button>

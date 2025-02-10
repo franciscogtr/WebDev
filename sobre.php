@@ -13,13 +13,18 @@
             height: 20%;
             width: 20%;
         }
+
+        h2{
+
+            
+        }
     </style>
 </head>
 
 <body>
     <header>
         <?php
-        include 'inc/cabecalho.inc.php'
+
         ?>
     </header>
     <main>

@@ -24,8 +24,8 @@
                 <label for="tipo">Tipo de ambiente:</label>
                 <select class="ambiente" name="tipo" id="tipo">
                 <option value="">Selecionar</option>
-                    <option value="lab">Laboratório</option>
-                    <option value="sal">Sala</option>
+                <option value="lab">Laboratório</option>
+                <option value="sal">Sala</option>
                 </select>
                 <br><br>
                 <a href="index.php" class="voltar">Home</a>

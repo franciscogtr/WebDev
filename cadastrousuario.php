@@ -28,7 +28,7 @@
                 <input type="password" name="senha" id="senha">
                 <br><br>
                 <p>Administrador?
-                    <input type="checkbox" name="admin" id="admin">
+                <input type="checkbox" name="admin" id="admin">
                 </p>
                 <br><br>
                 <a href="index.php" class="voltar">Home</a>
