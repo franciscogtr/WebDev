@@ -6,7 +6,9 @@
     <title>Minhas reservas</title>
 </head>
 <body>
-<?php?>
+<?php
+
+?>
 
 <header>
     

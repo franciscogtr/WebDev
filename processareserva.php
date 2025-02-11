@@ -18,4 +18,5 @@ $id = R::store($reserva);
 
 R::close();
 
-header('Location:reservahorario.php');
+header('Location:reservahorario.php?ambiente=$_GET[\'ambiente\']&
+data=$_GET[\'data\']');

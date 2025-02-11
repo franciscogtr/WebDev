@@ -72,7 +72,7 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
                 <img src="img/%s" alt="Imagem do Ambiente">
             </div>
             <p class='pCard'>%s</p>
-                <p class='pCard'><a class='aCard' href="calendario.php?ambiente=%s?">Reservar</a></p>
+                <p class='pCard'><a class='aCard' href="calendario.php?ambiente=%s">Reservar</a></p>
         </div>
 
 CARDINDEX;

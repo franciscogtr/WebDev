@@ -27,14 +27,6 @@
 		}
 		?>
 
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabela de Horários</title>
-</head>
-<body>
     <h2>Selecione os Horários para Reserva</h2>
     
 	<table>
@@ -61,9 +53,6 @@
             </tr>
         </tbody>
     </table>
-</body>
-</html>
-
 	</main>
 	<footer>
 		<?php include 'inc/rodape.inc.php' ?>
