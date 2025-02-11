@@ -87,7 +87,7 @@ CARDINDEX;
         ?>
         <h1>Laboratórios</h1>
         <?php
-        if (count($salas) > 0) {
+        if (count($labs) > 0) {
             foreach ($labs as  $lab) {
                 printf($heredoc, $lab->imagem, $lab->nome, $lab->nome);
             }
