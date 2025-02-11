@@ -2,61 +2,87 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>reserva horario</title>
-	<link rel="stylesheet" href="stylesheet.css">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reserva horario</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-	<header>
-		<?php include 'inc/cabecalho.inc.php' ?>
+    <header>
+        <?php include 'inc/cabecalho.inc.php' ?>
 
-		<p><a href="index.php" class="voltar">Home</a> </p>
-	</header>
-	<main>
-		<?php
-		require_once 'class/rb.php';
-		include 'inc/conexaoBD.inc.php';
+        <p><a href="index.php" class="voltar">Home</a> </p>
+    </header>
+    <main>
+        <?php
+        require_once 'class/rb.php';
+        include 'inc/conexaoBD.inc.php';
 
-		if(isset($_GET['ambiente']) && isset($_GET['ambiente'])){
-			$ambiente = $_GET['ambiente'];
-			$data = $_GET['data'];
-			// echo $ambiente;
-		}
-		?>
+        if (isset($_GET['ambiente']) && isset($_GET['ambiente'])) {
+            $ambiente = $_GET['ambiente'];
+            $data = $_GET['data'];
+            // echo $ambiente;
+        }
 
-    <h2>Selecione os Horários para Reserva</h2>
-    
-	<table>
-        <tbody>
-            <tr>
-                <td><a href="processareserva.php?hora=07:00&ambiente=<?=$ambiente?>&data=<?=$data?>">07:00</a></td>
-                <td><a href="processareserva.php?hora=08:00&ambiente=<?=$ambiente?>&data=<?=$data?>">08:00</a></td>
-                <td><a href="processareserva.php?hora=09:00&ambiente=<?=$ambiente?>&data=<?=$data?>">09:00</a></td>
-            </tr>
-            <tr>
-                <td><a href="processareserva.php?hora=10:00&ambiente=<?=$ambiente?>&data=<?=$data?>">10:00</a></td>
-                <td><a href="processareserva.php?hora=11:00&ambiente=<?=$ambiente?>&data=<?=$data?>">11:00</a></td>
-                <td><a href="processareserva.php?hora=12:00&ambiente=<?=$ambiente?>&data=<?=$data?>">12:00</a></td>
-            </tr>
-            <tr>
-                <td><a href="processareserva.php?hora=13:00&ambiente=<?=$ambiente?>&data=<?=$data?>">13:00</a></td>
-                <td><a href="processareserva.php?hora=14:00&ambiente=<?=$ambiente?>&data=<?=$data?>">14:00</a></td>
-                <td><a href="processareserva.php?hora=15:00&ambiente=<?=$ambiente?>&data=<?=$data?>">15:00</a></td>
-            </tr>
-            <tr>
-                <td><a href="processareserva.php?hora=16:00&ambiente=<?=$ambiente?>&data=<?=$data?>">16:00</a></td>
-                <td><a href="processareserva.php?hora=17:00&ambiente=<?=$ambiente?>&data=<?=$data?>">17:00</a></td>
-                <td><a href="processareserva.php?hora=18:00&ambiente=<?=$ambiente?>&data=<?=$data?>">18:00</a></td>
-            </tr>
-        </tbody>
-    </table>
-	</main>
-	<footer>
-		<?php include 'inc/rodape.inc.php' ?>
-	</footer>
+        //Buscando reservas feitas no dia selecionado
+        $reservas = R::find('reserva', ' data LIKE ? ', [$_GET['data']]);
+        // foreach ($reservas as $reserva) {
+        //     echo '<p>' . $reserva->hora . '</p>';
+        // }
+        ?>
+
+        <h2>Selecione os Horários para Reserva</h2>
+
+        <table>
+            <tbody>
+                <?php
+                $hora_inicial = 7;  // Hora de início
+                $hora_final = 18;   // Hora final
+                $index = 0;         // Variável para controle da linha
+
+                // Laço para gerar a tabela dinamicamente
+                for ($hora = $hora_inicial; $hora <= $hora_final; $hora++) {
+                    $hora_formatada = str_pad($hora, 2, '0', STR_PAD_LEFT) . ":00";
+
+                    // Começa uma nova linha a cada 3 horários
+                    if ($index % 3 == 0) {
+                        echo "<tr>";
+                    }
+
+                    // Verificar se o horário está reservado
+                    $disponivel = true;
+                    foreach ($reservas as $reserva) {
+                        if ($reserva->hora == $hora_formatada) {
+                            $disponivel = false;
+                            break;
+                        }
+                    }
+
+                    // Se não estiver disponível, exibe como texto desabilitado
+                    if (!$disponivel) {
+                        echo "<td><span style='color:#a0a0a0; text-decoration:none;'>$hora_formatada</span></td>";
+                    } else {
+                        // Caso esteja disponível, exibe o link
+                        echo "<td><a id='calendario' href='processareserva.php?hora=$hora_formatada&ambiente=$ambiente&data=$data'>$hora_formatada</a></td>";
+                    }
+
+                    // Fechando a linha a cada 3 horários
+                    if ($index % 3 == 2) {
+                        echo "</tr>";
+                    }
+
+                    $index++;
+                }
+                ?>
+            </tbody>
+        </table>
+
+    </main>
+    <footer>
+        <?php include 'inc/rodape.inc.php' ?>
+    </footer>
 </body>
 
 </html>
