@@ -25,12 +25,18 @@
         <h2>Escolha um mês para reservar</h2>
 
         <?php
+
+        //armazena o ambiente vindo de Index.php
+        $ambiente = $_GET['ambiente'];
+        //echo $ambiente;
+
         date_default_timezone_set('America/Fortaleza');
         $hoje = new DateTime();
         $data = $hoje->format('Y-m');
 
         ?>
         <form id="formMes">
+            <input type="hidden" name="ambiente" value="<?=$ambiente?>">
             <input type="month" name="mes" id="mes"
                 min="<?= $data; ?>"
                 onchange="submit()">
@@ -84,6 +90,7 @@
                     $mes = 'Dezembro';
                     break;
             }
+            
 
             echo '<h1 id="data">' . $mes . ' de ' . $data->format('Y') . '</h1>';
 
@@ -125,7 +132,7 @@
                             } else {
 
                         ?>
-                            <a id="calendario" href="ambiente.php?data=<?= $data->format('Y-m') . '-' . $i   ?>">
+                            <a id="calendario" href="reservahorario.php?ambiente=<?=$_GET['ambiente']?>&data=<?= $data->format('Y-m') . '-' . $i   ?>">
                                 <?= $i ?>
                             </a>
                     <?php
