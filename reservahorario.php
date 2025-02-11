@@ -23,8 +23,10 @@
 		include 'inc/conexaoBD.inc.php';
 
 
+
+
 		for($i = 8; $i <= 18; $i++){
-				echo "<a href=\"processahoras.php\">$i</a>";
+				echo "<a href=\"processareserva.php\">$i</a>";
 				echo "<br>";
 		}
 		?>
