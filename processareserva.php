@@ -11,12 +11,18 @@ $reserva = R::dispense('reserva');
 
 $reserva->nomeResevante = $_SESSION['nome'];
 $reserva->ambiente = $_GET['ambiente'];
-$reserva->data =  $_GET['data'];
+$reserva->data =  date($_GET['data']);
 $reserva->hora = $_GET['hora'];
 
 $id = R::store($reserva);
 
 R::close();
 
-header('Location:reservahorario.php?ambiente=$_GET[\'ambiente\']&
-data=$_GET[\'data\']');
+$link = 'reservahorario.php?ambiente=' . $_GET['ambiente'] . '&data=' . $_GET['data'];
+
+// echo $link;
+
+header("Location: $link");
+
+
+?>
