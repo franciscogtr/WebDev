@@ -50,7 +50,7 @@
 
             $strdata = $_GET['mes'];
             $data = new DateTime($strdata);
-            // echo $data->format('m');
+            // echo $data->format('d-m-Y');
 
             switch ($data->format('m')) {
                 case '1':
@@ -119,7 +119,7 @@
                         }
                         // echo '<br>' . '<br>';
                         $diasdasemana = 0;
-                        $totaldias =  $data->format('t');
+                        $totaldias =  $data->format('t');//quantidade de dias no mês
                         for (
                             $i = 1, $diasdasemana = $espacoinicio + 1;
                             $i <= $totaldias;
@@ -144,7 +144,7 @@
                         }
                         echo '<br>' . '<br>';
 
-                        $strdatafim = '2039-07' . $totaldias;
+                        $strdatafim = $_GET['mes']. '-' . $totaldias;
                         $data = new DateTime($strdatafim);
                         $espacofim = $data->format('w');
                         for ($i = ++$espacofim; $i < 7; $i++) {
