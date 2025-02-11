@@ -61,8 +61,6 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
 
     <main>
         
-
-
         <h1>Salas</h1>
 
         <?php
@@ -74,7 +72,7 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
                 <img src="img/%s" alt="Imagem do Ambiente">
             </div>
             <p class='pCard'>%s</p>
-                <p class='pCard'><a class='aCard' href="calendario.php?ambiente=%s">Reservar</a></p>
+                <p class='pCard'><a class='aCard' href="calendario.php?ambiente=%s?">Reservar</a></p>
         </div>
 
 CARDINDEX;
@@ -87,7 +85,7 @@ CARDINDEX;
         ?>
         <h1>Laboratórios</h1>
         <?php
-        if (count($salas) > 0) {
+        if (count($labs) > 0) {
             foreach ($labs as  $lab) {
                 printf($heredoc, $lab->imagem, $lab->nome, $lab->nome);
             }
