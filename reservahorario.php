@@ -35,7 +35,7 @@
 
         <h2>Selecione os Horários para Reserva</h2>
 
-        <table>
+        <table class="reserva">
             <tbody>
                 <?php
                 $hora_inicial = 7;  // Hora de início
