@@ -12,15 +12,20 @@
 		<?php include 'inc/cabecalho.inc.php' ?>
 	</header>
 	<main>
-		<?php
 
+	
+		<?php
 		require_once 'class/rb.php';
 		include 'inc/conexaoBD.inc.php';
-		?>
 
+
+		for($i = 8; $i <= 18; $i++){
+				echo "<a href=\"processahoras.php\">$i</a>";
+				echo "<br>";
+		}
+		?>
 		<footer>
 			<?php include 'inc/rodape.inc.php' ?>
 		</footer>
 </body>
-
 </html>
