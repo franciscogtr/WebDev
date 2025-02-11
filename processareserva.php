@@ -11,7 +11,9 @@ $reserva = R::dispense('reserva');
 
 $reserva->nomeResevante = $_SESSION['nome'];
 $reserva->ambiente = $_GET['ambiente'];
-$reserva->ambiente = $_GET['hora'];
+$reserva->data = $_GET['data'];
+$reserva->hora = $_GET['hora'];
+
 
 
 
