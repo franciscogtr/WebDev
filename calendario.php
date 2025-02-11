@@ -120,11 +120,16 @@
                         ) {
                             echo "<td>";
 
+                            if ($dataCompleta->format('Y-m') == $hoje->format('Y-m') && $i < $hoje->format('d')) {
+                                echo "<span style='color:#a0a0a0a0; text-decoration:none'>$i</span>";
+                            } else {
+
                         ?>
                             <a id="calendario" href="ambiente.php?data=<?= $data->format('Y-m') . '-' . $i   ?>">
                                 <?= $i ?>
                             </a>
                     <?php
+                        }
                             echo "</td>";
                             if ($diasdasemana % 7 == 0) {
                                 echo '</tr>';
