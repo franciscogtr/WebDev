@@ -19,9 +19,12 @@
 		<?php
 		require_once 'class/rb.php';
 		include 'inc/conexaoBD.inc.php';
-		$ambiente = $_GET['ambiente'];
-		$data = $_GET['data'];
-		echo $ambiente;
+
+		if(isset($_GET['ambiente']) && isset($_GET['ambiente'])){
+			$ambiente = $_GET['ambiente'];
+			$data = $_GET['data'];
+			// echo $ambiente;
+		}
 		?>
 
 <!DOCTYPE html>
