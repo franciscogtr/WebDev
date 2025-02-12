@@ -54,7 +54,7 @@
                     // Verificar se o horário está reservado
                     $disponivel = true;
                     foreach ($reservas as $reserva) {
-                        if ($reserva->hora == $hora_formatada) {
+                        if ($reserva->hora == $hora_formatada && $reserva->ambiente == $ambiente) {
                             $disponivel = false;
                             break;
                         }
