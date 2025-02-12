@@ -27,7 +27,7 @@
         }
 
         //Buscando reservas feitas no dia selecionado
-        $reservas = R::find('reserva', ' data LIKE ? ', [$_GET['data']]);
+        $reservas = R::find('reserva', ' data LIKE ? ', [$data]);
         // foreach ($reservas as $reserva) {
         //     echo '<p>' . $reserva->hora . '</p>';
         // }
@@ -40,14 +40,14 @@
                 <?php
                 $hora_inicial = 7;  // Hora de início
                 $hora_final = 18;   // Hora final
-                $index = 0;         // Variável para controle da linha
+                $quebra = 0;         // Variável para controle da linha
 
                 // Laço para gerar a tabela dinamicamente
                 for ($hora = $hora_inicial; $hora <= $hora_final; $hora++) {
                     $hora_formatada = str_pad($hora, 2, '0', STR_PAD_LEFT) . ":00";
 
                     // Começa uma nova linha a cada 3 horários
-                    if ($index % 3 == 0) {
+                    if ($quebra % 3 == 0) {
                         echo "<tr>";
                     }
 
@@ -69,11 +69,11 @@
                     }
 
                     // Fechando a linha a cada 3 horários
-                    if ($index % 3 == 2) {
+                    if ($quebra % 3 == 2) {
                         echo "</tr>";
                     }
 
-                    $index++;
+                    $quebra++;
                 }
                 ?>
             </tbody>
