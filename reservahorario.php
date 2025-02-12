@@ -23,14 +23,17 @@
         if (isset($_GET['ambiente']) && isset($_GET['data'])) {
             $ambiente = $_GET['ambiente'];
             $data = $_GET['data'];
-            // echo $ambiente;
+            $dataFormatada =  new DateTime($data);
+            
+            //echo $dataFormatada->format('Y-m-d');
+           
         }
 
         //Buscando reservas feitas no dia selecionado
-        $reservas = R::find('reserva', ' data LIKE ? ', [$data]);
-        // foreach ($reservas as $reserva) {
-        //     echo '<p>' . $reserva->hora . '</p>';
-        // }
+
+        
+        $reservas = R::find('reserva', ' data LIKE ? ', [$dataFormatada->format('Y-m-d')]);
+         
         ?>
 
         <h2>Selecione os Horários para Reserva</h2>

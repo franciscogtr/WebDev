@@ -127,8 +127,22 @@
                         ) {
                             echo "<td>";
 
+                            //Verifica se o dia é menor que o dia atual
+
                             if ($dataCompleta->format('Y-m') == $hoje->format('Y-m') && $i < $hoje->format('d')) {
                                 echo "<span style='color:#a0a0a0a0; text-decoration:none'>$i</span>";
+                            } 
+                            
+                            //Adiciona um zero aos dias menores que 10 para manter a formatação igual a do BD, necessário para o find de reservaHorario.php
+                            
+                            elseif ($i < 10) {
+                                
+                                ?>
+                            <a id="calendario" href="reservahorario.php?ambiente=<?=$_GET['ambiente']?>&data=<?= $data->format('Y-m') . '-' . '0' .  $i   ?>">
+                                <?= $i ?>
+                            </a>
+                    <?php
+
                             } else {
 
                         ?>

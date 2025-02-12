@@ -9,14 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
+        table {
 
-    table{
+            margin-top: 50px;
+            margin-bottom: 50px;
 
-        margin-top: 50px;
-        margin-bottom: 50px;
-
-    }
-
+        }
     </style>
 </head>
 
@@ -36,14 +34,14 @@
         require_once 'class/rb.php';
         include 'inc/conexaoBD.inc.php';
 
-       
+
 
         $iniciotabela = <<<INICIO
                 <table>
                     <thead>
                         <th>Reservante</th>
-                        <th>Data da reserva</th>
                         <th>Ambiente reservado</th>
+                        <th>Data da reserva</th>
                         <th>Hora reservada</th>
                     </thead>
                     <tbody>
@@ -60,14 +58,18 @@ CORPO;
 
 
         echo $iniciotabela;
-        $todasReservas = R::find('reserva', ' nome_resevante LIKE ? ', [$_SESSION['nome']]);       
-        
-        foreach ($todasReservas as $key => $value) {
+        $todasReservas = R::find('reserva', ' email_resevante LIKE ? ', [$_SESSION['email']]);
+
+        foreach ($todasReservas as $value) {
+
+            // Converte a data do banco (assumindo que está no formato 'YYYY-MM-DD')
+            $dataFormatada = DateTime::createFromFormat('Y-m-d', $value->data)->format('d/m/Y');
+
             printf(
                 $corpotabela,
                 $value->nome_resevante,
                 $value->ambiente,
-                $value->data,
+                $dataFormatada,
                 $value->hora
             );
         }
@@ -75,7 +77,7 @@ CORPO;
         echo "  </tbody>
                     </table>";
         ?>
-        <p >
+        <p>
 
         </p>
     </main>
