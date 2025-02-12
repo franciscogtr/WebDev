@@ -1,3 +1,17 @@
+<?php
+        //Inicia a sessão caso ainda n tenha sido iniciada
+
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+        
+        //Impede acesso de visitantes
+
+        if (!isset($_SESSION['nome'])) {
+            header('Location:login.php');
+        }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

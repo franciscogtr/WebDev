@@ -292,8 +292,10 @@ h1{
 footer{
     background-color:#F2F2F2;
     border-top: 2px solid #1E2026 ;
+    padding: 5px;
 }
 
 .pRodape {
      text-align: center;
+     font-weight: bold;
 }
