@@ -7,6 +7,17 @@
     <title>Minhas reservas</title>
     <link rel="stylesheet" href="stylesheet.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+
+    table{
+
+        margin-top: 50px;
+        margin-bottom: 50px;
+
+    }
+
+    </style>
 </head>
 
 <body>
