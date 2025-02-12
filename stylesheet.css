@@ -249,6 +249,8 @@ h1{
 
 }
 
+/*Estilizaçaão de Reserva Horário*/
+
 .reserva{
     height: 200px;
     width: 240px;
@@ -272,4 +274,26 @@ h1{
 .divReserva{
     margin-top: 1em;
     justify-content: center;
+}
+
+
+/*Estilizaçaão de Minhas Reservas*/
+
+
+.tableMinhasReservas {
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+/*Estilização de Footer*/
+
+footer{
+    background-color:#F2F2F2;
+    border-top: 2px solid #1E2026 ;
+}
+
+.pRodape {
+     text-align: center;
 }

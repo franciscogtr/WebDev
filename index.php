@@ -20,7 +20,7 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
 </head>
 <style>
     
-
+   
     
 </style>
 

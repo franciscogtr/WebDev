@@ -8,14 +8,6 @@
     <link rel="stylesheet" href="stylesheet.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
-    <style>
-        table {
-
-            margin-top: 50px;
-            margin-bottom: 50px;
-
-        }
-    </style>
 </head>
 
 <body>
@@ -37,7 +29,7 @@
 
 
         $iniciotabela = <<<INICIO
-                <table>
+                <table class ="tableMinhasReservas">
                     <thead>
                         <th>Reservante</th>
                         <th>Ambiente reservado</th>
