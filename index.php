@@ -31,7 +31,7 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
         ?>
         <nav>
             <a class="aheader" href="calendario.php">Reservar</a>
-            <a class="aheader" href="minhassreservas.php">Minhas Reservas</a>
+            <a class="aheader" href="minhasreservas.php">Minhas Reservas</a>
             <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] === 'on'): ?>
 
                 <select id="cadastrar" onchange="redirecionarPagina()">

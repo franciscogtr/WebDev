@@ -20,7 +20,7 @@
         require_once 'class/rb.php';
         include 'inc/conexaoBD.inc.php';
 
-        if (isset($_GET['ambiente']) && isset($_GET['ambiente'])) {
+        if (isset($_GET['ambiente']) && isset($_GET['data'])) {
             $ambiente = $_GET['ambiente'];
             $data = $_GET['data'];
             // echo $ambiente;
