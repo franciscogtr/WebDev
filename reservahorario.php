@@ -79,6 +79,8 @@
             </tbody>
         </table>
 
+        <div class="divReserva"><button class="buttonReserva" type="button"><a class="acabecalho" href="index.php">Finalizar</a></button></div>
+                    
     </main>
     <footer>
         <?php include 'inc/rodape.inc.php' ?>

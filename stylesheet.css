@@ -254,3 +254,22 @@ h1{
     width: 240px;
     margin-top: 50px;
 }
+
+
+.buttonReserva{
+    
+    background-color: #3876F2;
+    color:#F2F2F2;
+    font-weight: bold;
+    border: none;
+    width: 18.3em;
+    height: 2em;
+    display: block;
+    float: none;
+    margin: 0 auto;
+}
+
+.divReserva{
+    margin-top: 1em;
+    justify-content: center;
+}
