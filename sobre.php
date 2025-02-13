@@ -5,38 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        img {
-            border: solid black 1px;
-            border-radius: 50%;
-            /* size: 10px; */
-            height: 20%;
-            width: 20%;
-        }
-
-        h2{
-
-            
-        }
-    </style>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <?php
-
+            include 'inc/cabecalho.inc.php'
         ?>
+        <p><a href="index.php" class="voltar">Home</a> </p>
     </header>
     <main>
         
-        <h2>Sobre</h2>
+        <h2>Equipe Desenvolvedora</h2>
 
-        <h3><b>Feito por: </b></h3> <br>
-        <p><img src="img/analuiza.png" alt="Ana Luiza"><br>Nome: Ana Luiza Alves Viera</p>
+        
+        <p><img class="imgSobre" src="img/analuiza.png" alt="Ana Luiza"><br>Nome: Ana Luiza Alves Viera</p>
         <p>Email: alav@aluno.ifnmg.edu.br</p>
-        <p><img src="img/francisco.jpg" alt="foto Francisco"><br>Nome: Francisco José Geraldo Matos de Sousa</p>
+        <p><img class="imgSobre" src="img/francisco.jpg" alt="foto Francisco"><br>Nome: Francisco José Geraldo Matos de Sousa</p>
         <p>Email: fjgms@aluno.ifnmg.edu.br</p>
-        <p> <img src="img/samuel.jpg" alt="Foto Samuel"><br>Nome: Samuel Motta de Castro</p>
+        <p> <img class="imgSobre" src="img/samuel.jpg" alt="Foto Samuel"><br>Nome: Samuel Motta de Castro</p>
         <p>Email: smc11@aluno.ifnmg.edu.br</p>
 
 

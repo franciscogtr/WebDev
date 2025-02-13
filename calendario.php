@@ -189,7 +189,7 @@
     </main>
     <footer>
         <?php
-
+            include 'inc/rodape.inc.php'
         ?>
     </footer>
 </body>
