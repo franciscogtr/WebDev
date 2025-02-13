@@ -48,7 +48,7 @@
                 <input type="checkbox" name="admin" id="admin">
                 </p>
                 <br><br>
-                <a href="index.php" class="voltar">Voltar</a>
+                <p class="pHeader"><a href="index.php" class="voltar">Voltar</a></p>
                 <button type="submit">Cadastrar</button>
             </fieldset>
         </form>

@@ -48,19 +48,12 @@
             <option value="sal">Sala</option>
         </select>
         <br><br>
-        <a href="index.php" class="voltar">Voltar</a>
+        <p class="pHeader"><a href="index.php" class="voltar">Voltar</a></p>
         <button type="submit">Cadastrar</button>
     </fieldset>
 </form>
 
     </main>
-    <footer>
-    <?php
-        include 'inc/rodape.inc.php'
-        ?>
-    </footer>
-</body>
-</html>
 
 <?php
 // Inicia a sessão caso ainda não tenha sido iniciada
@@ -131,3 +124,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['nome'], $_POST['tipo']
 }
 ?>
 
+<footer>
+    <?php
+        include 'inc/rodape.inc.php'
+        ?>
+    </footer>
+</body>
+</html>
