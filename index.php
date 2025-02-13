@@ -35,7 +35,7 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
 
                 <select id="cadastrar" onchange="redirecionarPagina()">
                     <option value="">Cadastrar</option>
-                    <option value="cadastroambienteteste.php">Ambiente</option>
+                    <option value="cadastroambiente.php">Ambiente</option>
                     <option value="cadastrousuario.php">Usuário</option>
                 </select>
                 <script>
