@@ -36,13 +36,13 @@
             <h2 class="form">Cadastrar Usuário</h2>
                 <br><br>
                 <label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome">
+                <input type="text" name="nome" id="nome" required>
                 <br><br>
                 <label for="email">Email:</label>
-                <input type="email" name="email" id="email">
+                <input type="email" name="email" id="email" required>
                 <br><br>
                 <label for="senha">Senha:</label>
-                <input type="password" name="senha" id="senha">
+                <input type="password" name="senha" id="senha" minlength="8" required>
                 <br><br>
                 <p>Administrador?
                 <input type="checkbox" name="admin" id="admin">

@@ -9,19 +9,16 @@
 
 </head>
 <body>
-    <header>
-    
-    </header>
     <main>
     <form method="get">
     <fieldset>
         <h2 class="form">Login</h2>
         <br><br>
         <label for="email">Email:</label>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" required>
         <br><br>
         <label for="senha">Senha:</label>
-        <input type="password" name="senha" id="senha">
+        <input type="password" name="senha" id="senha" required>
         <br><br>
         <button type="submit">Entrar</button>
     </fieldset>
@@ -70,8 +67,5 @@ if (isset($_GET['senha']) && isset($_GET['email'])) {
 
 ?>
     </main>
-    <footer>
-
-    </footer>
 </body>
 </html>

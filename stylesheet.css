@@ -51,6 +51,12 @@ select {
   
 }
 
+select:focus {
+    outline: none;
+    border: none;
+}
+
+
 select:hover{
     color: #3876F2;
 }
@@ -58,6 +64,7 @@ select:hover{
 option{
     color: #1E2026;
     background-color: #F2F2F2;
+    border:none;
 }
 
 option:hover{

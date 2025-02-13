@@ -33,14 +33,31 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
             <p class="pHeader"><a class="aheader" href="minhasreservas.php">Reservas</a></p>
             <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] === 'on'): ?>
 
-                <select id="cadastrar" onchange="redirecionarPagina()">
+                <select id="cadastrar" onchange="redirecionarCadastro()">
                     <option value="">Cadastrar</option>
                     <option value="cadastroambiente.php">Ambiente</option>
                     <option value="cadastrousuario.php">Usuário</option>
                 </select>
                 <script>
-                    function redirecionarPagina() {
+                    function redirecionarCadastro() {
                         var select = document.getElementById("cadastrar");
+                        var valor = select.value;
+                        if (valor) {
+                            window.location.href = valor; // Redireciona para a página selecionada
+                        }
+                    }
+                </script>
+
+            
+
+            <select id="excluir" onchange="redirecionarExcluir()">
+                    <option value="">Remover</option>
+                    <option value="excluirambiente.php">Ambiente</option>
+                    <option value="excluirusuario.php">Usuário</option>
+                </select>
+                <script>
+                    function redirecionarExcluir() {
+                        var select = document.getElementById("excluir");
                         var valor = select.value;
                         if (valor) {
                             window.location.href = valor; // Redireciona para a página selecionada
