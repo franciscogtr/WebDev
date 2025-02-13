@@ -10,12 +10,19 @@ header{
 nav{
     background-color:#F2F2F2;
 }
-html,body {
+body {
 background-color: #F2F2F2;
 height: 100%;
-    margin: 0;
+    margin: 10px;
     display: flex;
     flex-direction: column;
+}
+
+.pHeader{
+    /* border: red solid 2px;  */
+    display: inline-block;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
 }
 
 main{
@@ -66,6 +73,7 @@ option:hover{
     
 }
 button{
+    margin-top: 9px;
     background-color: #3876F2;
     color:#F2F2F2;
     font-weight: bold;
@@ -74,6 +82,8 @@ button{
     height: 2em;
     display: inline;
     float:right;
+    border-radius: 10px;
+    
 }
 
 .acabecalho{
@@ -98,20 +108,46 @@ label{
     color:#1E2026;
 }
 
-input {
+input[type="text"] {
     
     background-color:#F2F2F2;
+    border-radius: 9px;
+    border: #1E2026 solid 1px;
+}
+
+input[type="email"] {
+    
+    background-color:#F2F2F2;
+    border-radius: 9px;
+    border: #1E2026 solid 1px;
+}
+
+input[type="password"] {
+    
+    background-color:#F2F2F2;
+    border-radius: 9px;
+    border: #1E2026 solid 1px;
+}
+
+input[type="file"] {
+    
+    background-color:#F2F2F2;
+    border-radius: 3px;
 }
 .form{
     color:#3876F2;
+    margin-bottom: 25px;
 }
 
 form{
-    
     background-color: #F2F2F2;
     width: 50%;
     margin: 5em auto;
     /* border: solid red; */
+}
+
+fieldset{
+    border-radius: 20px;
 }
 
 #padmin{
@@ -302,9 +338,11 @@ footer{
     border-top: 2px solid #1E2026 ;
     padding: 5px;
     margin-top: 10px;
+    
 }
 
 .pRodape {
+    display: block;
      text-align: center;
      font-weight: bold;
 }

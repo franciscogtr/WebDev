@@ -25,7 +25,10 @@
 
 <body>
     <header>
-        
+    <?php
+        include 'inc/cabecalho.inc.php'
+        ?>  
+         <p><a href="index.php" class="voltar">Home</a> </p> 
     </header>
     <main>
         <form action>
@@ -45,7 +48,7 @@
                 <input type="checkbox" name="admin" id="admin">
                 </p>
                 <br><br>
-                <a href="index.php" class="voltar">Home</a>
+                <a href="index.php" class="voltar">Voltar</a>
                 <button type="submit">Cadastrar</button>
             </fieldset>
         </form>

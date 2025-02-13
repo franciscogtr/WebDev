@@ -7,7 +7,11 @@
    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <?php
-session_start();
+//Inicia a sessão caso ainda n tenha sido iniciada
+
+if (session_status() == PHP_SESSION_NONE) {
+   session_start();
+}
 
 date_default_timezone_set('America/Fortaleza');
 

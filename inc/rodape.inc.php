@@ -6,4 +6,4 @@
    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<p class="pRodape">&copy; Web Dev 2024</p>
+<p class="pRodape" >&copy; Web Dev 2024</p>

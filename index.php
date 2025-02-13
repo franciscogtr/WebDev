@@ -30,7 +30,7 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
         include 'inc/cabecalho.inc.php'
         ?>
         <nav>
-            <p><a class="aheader" href="minhasreservas.php">Minhas Reservas</a></p>
+            <p class="pHeader"><a class="aheader" href="minhasreservas.php">Minhas Reservas</a></p>
             <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] === 'on'): ?>
 
                 <select id="cadastrar" onchange="redirecionarPagina()">
@@ -51,7 +51,7 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
             <?php endif; ?>
             
 
-            <p><a class="aheader" href="sobre.php">Sobre</a></p>
+            <p class="pHeader"><a class="aheader" href="sobre.php">Sobre</a></p>
 
         </nav>
     </header>

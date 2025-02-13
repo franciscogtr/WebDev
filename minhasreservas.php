@@ -58,10 +58,25 @@ INICIO;
                         </tr>
 CORPO;
 
+        // $todasReservas = R::find('reserva', ' email_resevante LIKE ? ', [$_SESSION['email']]);
 
-        echo $iniciotabela;
+              
+
+        
+
+    if($_SESSION['email'] == 'root@mail.com'){
+        $todasReservas = R::findall('reserva');
+    }
+    else{
         $todasReservas = R::find('reserva', ' email_resevante LIKE ? ', [$_SESSION['email']]);
 
+        if (!$todasReservas) {
+            # code...
+        }else {
+            echo $iniciotabela;
+        } 
+    }
+        
         foreach ($todasReservas as $value) {
 
             // Converte a data do banco (assumindo que está no formato 'YYYY-MM-DD')
