@@ -65,7 +65,7 @@
     require_once 'class/rb.php';
     include 'inc/conexaoBD.inc.php';
 
-    $ambiente  = R::findOne('usuario', ' nome = ? ', [$_GET['nome']]);
+    $ambiente  = R::findOne('ambiente', ' nome = ? ', [$_GET['nome']]);
 
                 // filtro para não cadastrar ambientes iguais
 
@@ -80,5 +80,6 @@
                     R::close();
                     echo 'Ambiente cadastrado com sucesso!';
                 }
+
  }
 ?>

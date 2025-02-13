@@ -30,7 +30,7 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
         include 'inc/cabecalho.inc.php'
         ?>
         <nav>
-            <p class="pHeader"><a class="aheader" href="minhasreservas.php">Minhas Reservas</a></p>
+            <p class="pHeader"><a class="aheader" href="minhasreservas.php">Reservas</a></p>
             <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] === 'on'): ?>
 
                 <select id="cadastrar" onchange="redirecionarPagina()">
@@ -67,7 +67,7 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
 
          <div class='cardIndex'>
             <div class='item'> 
-                <img src="img/%s" alt="Imagem do Ambiente">
+                <img src="img/ambientes/%s" alt="Imagem do Ambiente">
             </div>
             <p class='pCard'>%s</p>
                 <p class='pCard'><a class='aCard' href="calendario.php?ambiente=%s">Reservar</a></p>

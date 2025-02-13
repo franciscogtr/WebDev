@@ -74,7 +74,11 @@
                 $usuario->nome = $_GET['nome'];
                 $usuario->email = $_GET['email'];
                 $usuario->senha = password_hash($_GET['senha'], PASSWORD_DEFAULT);
-                $usuario->admin = $_GET['admin'];
+                
+                if (isset($_GET['admin'])) {
+                    $usuario->admin = $_GET['admin'];
+                }
+
                 $id = R::store($usuario);
                 R::close();
                 echo 'Usuario cadastrado com sucesso!';

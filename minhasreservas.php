@@ -66,6 +66,8 @@ CORPO;
 
     if($_SESSION['email'] == 'root@mail.com'){
         $todasReservas = R::findall('reserva');
+
+        echo $iniciotabela;
     }
     else{
         $todasReservas = R::find('reserva', ' email_resevante LIKE ? ', [$_SESSION['email']]);
