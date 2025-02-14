@@ -10,6 +10,14 @@
         if (!isset($_SESSION['nome'])) {
             header('Location:login.php');
         }
+
+        if (isset($_GET['ambiente']) && isset($_GET['data'])) {
+
+            $ambiente = $_GET['ambiente'];
+            $data = $_GET['data'];
+            // echo $ambiente;
+
+        }
 ?>
 
 <!DOCTYPE html>
@@ -27,16 +35,16 @@
     <header>
         <?php include 'inc/cabecalho.inc.php' ?>
 
-        <p><a href="index.php" class="voltar">Home</a> </p>
+        <p class="pHeader"><a href="index.php" class="voltar">Home</a> </p>
+        <p class="pHeader"><a href="calendario.php?ambiente=<?= $ambiente ?>" class="voltar">Voltar</a></p>
     </header>
     <main>
         <?php
         require_once 'class/rb.php';
         include 'inc/conexaoBD.inc.php';
 
-        if (isset($_GET['ambiente']) && isset($_GET['data'])) {
-            $ambiente = $_GET['ambiente'];
-            $data = $_GET['data'];
+        
+            
             $dataFormatada =  new DateTime($data);
             $hoje = new DateTime();
             $horaAtual = $hoje->format('H') . ':00';
@@ -45,7 +53,7 @@
             
             //echo $dataFormatada->format('Y-m-d');
            
-        }
+        
 
         //Buscando reservas feitas no dia selecionado
 
