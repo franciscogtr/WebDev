@@ -23,18 +23,18 @@
         <div class="divMae">
             <div class="divSobre">
                 <img class="imgSobre" src="img/criadores/analuiza.png" alt="Ana Luiza">
-                <p class="sobre">Nome: Ana Luiza Alves Viera</p>
-                <p class="sobre">Email: alav@aluno.ifnmg.edu.br</p>
+                <p class="sobre"><b>Nome: </b> Ana Luiza Alves Viera</p>
+                <p class="sobre"><b>Email: </b> alav@aluno.ifnmg.edu.br</p>
             </div>
             <div class="divSobre">
                 <img class="imgSobre" src="img/criadores/francisco.jpg" alt="foto Francisco">
-                <p class="sobre">Nome: Francisco José Geraldo Matos de Sousa</p>
-                <p class="sobre">Email: fjgms@aluno.ifnmg.edu.br</p>
+                <p class="sobre"><b>Nome: </b> Francisco José Geraldo Matos de Sousa</p>
+                <p class="sobre"><b>Email:</b> fjgms@aluno.ifnmg.edu.br</p>
             </div>
             <div class="divSobre">
                 <img class="imgSobre" src="img/criadores/samuel.jpg" alt="Foto Samuel">
-                <p class="sobre">Nome: Samuel Motta de Castro</p>
-                <p class="sobre">Email: smc11@aluno.ifnmg.edu.br</p>
+                <p class="sobre"><b>Nome: </b> Samuel Motta de Castro</p>
+                <p class="sobre"><b>Email: </b> smc11@aluno.ifnmg.edu.br</p>
             </div>
         </div>
 

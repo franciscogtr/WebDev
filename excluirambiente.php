@@ -107,17 +107,20 @@ if (isset($_GET['ambiente'])) {
     if (file_exists($imagemPath)) {
         // Tenta excluir o arquivo
         if (unlink($imagemPath)) {
-            echo "Ambiente excluido com sucesso!";
+            
+            echo '<p class="msgGreen">'  . 'Ambiente excluido com sucesso!' . '</p>';
             //exclui o ambiente no BD
             R::trash($beanAmbiente);
             //Redireciona para prórpia página pra tirar o GET da URL
             header('Location:excluirambiente.php'); 
 
         } else {
-            echo "Erro ao excluir a imagem.";
+            echo "";
+            echo '<p class="msgRed">'  . 'Erro ao excluir a imagem.' . '</p>';
         }
     } else {
-        echo "A imagem não existe.";
+    
+        echo '<p class="msgRed">'  . 'A imagem não existe.' . '</p>';
     }
 
 

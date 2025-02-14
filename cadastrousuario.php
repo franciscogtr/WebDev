@@ -66,7 +66,8 @@
 
             if ($usuario) {
 
-                echo 'email já cadastrado';
+                
+                echo '<p class="msgRed">'  . 'email já cadastrado!' . '</p>';
 
             } else {
 
@@ -81,7 +82,7 @@
 
                 $id = R::store($usuario);
                 R::close();
-                echo 'Usuario cadastrado com sucesso!';
+                echo '<p class="msgGreen">'  . 'Usuario cadastrado com sucesso!' . '</p>';
             }
         }
 

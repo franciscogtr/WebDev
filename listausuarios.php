@@ -63,22 +63,25 @@ INICIO;
 CORPO;
 
         $todosUsuarios = R::find( 'usuario', ' id > 1 ');
-        echo $iniciotabela;
-        
-        foreach ($todosUsuarios as $value) {
 
-            printf(
-                $corpotabela,
-                $value->nome,
-                $value->email,
-                $value->email
-            );
+        if ($todosUsuarios) {
+            echo $iniciotabela;
+        
+            foreach ($todosUsuarios as $value) {
+    
+                printf(
+                    $corpotabela,
+                    $value->nome,
+                    $value->email,
+                    $value->email
+                );
+            }
+    
+            echo "  </tbody>
+                        </table>";
+           
         }
-
-        echo "  </tbody>
-                    </table>";
         ?>
-        
     </main>
     <footer>
         <?php include 'inc/rodape.inc.php' ?>
