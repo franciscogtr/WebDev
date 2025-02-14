@@ -10,7 +10,7 @@
 </head>
 <body>
     <main>
-    <form method="get">
+    <form method="post">
     <fieldset>
         <h2 class="form">Login</h2>
         <br><br>
@@ -27,14 +27,14 @@
 require_once 'class/rb.php';
 include 'inc/conexaoBD.inc.php';
 
-if (isset($_GET['senha']) && isset($_GET['email'])) {
+if (isset($_POST['senha']) && isset($_POST['email'])) {
 
-    $usuario  = R::findOne('usuario', ' email = ? ', [$_GET['email']]);
+    $usuario  = R::findOne('usuario', ' email = ? ', [$_POST['email']]);
     R::close();
 
     if ($usuario) {
 
-        if (password_verify( $_GET['senha'], $usuario->senha)) {
+        if (password_verify( $_POST['senha'], $usuario->senha)) {
 
             
                 session_start();

@@ -65,6 +65,7 @@ option{
     color: #1E2026;
     background-color: #F2F2F2;
     border:none;
+    appearance: none;
 }
 
 option:hover{
@@ -352,4 +353,60 @@ footer{
     display: block;
      text-align: center;
      font-weight: bold;
+}
+
+/*Estilização de Icones*/
+
+.icon{
+    width: 20px;
+    height: 24px;
+    
+}
+
+.divIcon{
+    margin: 0 auto;
+  /* border: solid red; */
+  background-image: url('img/icones/lixo.svg'); /* Imagem inicial */
+  background-size: cover;
+  background-position: center;
+  width: 20px;
+  height: 24px;
+  transition: background-image 0.3s ease; /* Transição suave */
+
+}
+
+.divIcon:hover{
+    background-image: url('img/icones/lixoHover.svg'); /* Imagem quando o mouse passa sobre */ 
+}
+
+/*Estilização de Sobre*/
+
+.sobre{
+    /* border: solid red; */
+    display: flex;
+    justify-content: center;
+    color: #f2f2f2;
+}
+
+.imgSobre{
+    display: flex;
+    /* border: solid red; */
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.divSobre {
+    /* border: #3876F2 solid; */
+    border-radius: 20px;
+    display: inline-block;
+    text-align: center; /* Centraliza conteúdo interno */
+    padding: 15px 15px 0px 15px; 
+    background-color: #1E2026;
+    margin: 0.3em;
+}
+
+.divMae{
+    /* border: #3876F2 solid; */
+    text-align: center;
 }

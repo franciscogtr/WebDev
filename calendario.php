@@ -31,7 +31,6 @@
         <?php
         include 'inc/cabecalho.inc.php';
         ?>
-
         <p><a href="index.php" class="voltar">Home</a> </p>
     </header>
 

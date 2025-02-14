@@ -20,13 +20,23 @@
         
         <h2>Equipe Desenvolvedora</h2>
 
-        
-        <p class="sobre"><img class="imgSobre" src="img/analuiza.png" alt="Ana Luiza"><br>Nome: Ana Luiza Alves Viera</p>
-        <p class="sobre">Email: alav@aluno.ifnmg.edu.br</p>
-        <p class="sobre"><img class="imgSobre" src="img/francisco.jpg" alt="foto Francisco"><br>Nome: Francisco José Geraldo Matos de Sousa</p>
-        <p class="sobre">Email: fjgms@aluno.ifnmg.edu.br</p>
-        <p class="sobre"> <img class="imgSobre" src="img/samuel.jpg" alt="Foto Samuel"><br>Nome: Samuel Motta de Castro</p>
-        <p class="sobre">Email: smc11@aluno.ifnmg.edu.br</p>
+        <div class="divMae">
+            <div class="divSobre">
+                <img class="imgSobre" src="img/criadores/analuiza.png" alt="Ana Luiza">
+                <p class="sobre">Nome: Ana Luiza Alves Viera</p>
+                <p class="sobre">Email: alav@aluno.ifnmg.edu.br</p>
+            </div>
+            <div class="divSobre">
+                <img class="imgSobre" src="img/criadores/francisco.jpg" alt="foto Francisco">
+                <p class="sobre">Nome: Francisco José Geraldo Matos de Sousa</p>
+                <p class="sobre">Email: fjgms@aluno.ifnmg.edu.br</p>
+            </div>
+            <div class="divSobre">
+                <img class="imgSobre" src="img/criadores/samuel.jpg" alt="Foto Samuel">
+                <p class="sobre">Nome: Samuel Motta de Castro</p>
+                <p class="sobre">Email: smc11@aluno.ifnmg.edu.br</p>
+            </div>
+        </div>
 
 
     </main>

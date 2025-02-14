@@ -38,6 +38,10 @@
             $ambiente = $_GET['ambiente'];
             $data = $_GET['data'];
             $dataFormatada =  new DateTime($data);
+            $hoje = new DateTime();
+            $horaAtual = $hoje->format('H') . ':00';
+            // echo $data;
+            // echo $hoje->format('Y-m-d');
             
             //echo $dataFormatada->format('Y-m-d');
            
@@ -81,8 +85,15 @@
                     if (!$disponivel) {
                         echo "<td><span style='color:#a0a0a0; text-decoration:none;'>$hora_formatada</span></td>";
                     } else {
-                        // Caso esteja disponível, exibe o link
+                            // Caso esteja disponível, verifica se o horário é anterior a hora atual, no dia vigente
+                        if ($hora_formatada < $horaAtual && $data == $hoje->format('Y-m-d')) {
+                            echo "<td><span style='color:#a0a0a0; text-decoration:none;'>$hora_formatada</span></td>";
+                        }
+                        else {
+                             // Caso esteja disponível, exibe o link
                         echo "<td><a id='calendario' href='processareserva.php?hora=$hora_formatada&ambiente=$ambiente&data=$data'>$hora_formatada</a></td>";
+                        }
+                       
                     }
 
                     // Fechando a linha a cada 3 horários

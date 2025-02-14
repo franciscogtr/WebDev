@@ -13,7 +13,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -31,6 +31,8 @@
     </header>
     <main>
 
+    
+
         <?php
 
         require_once 'class/rb.php';
@@ -45,6 +47,7 @@
                         <th>Ambiente reservado</th>
                         <th>Data da reserva</th>
                         <th>Hora reservada</th>
+                        <th>Excluir</th>
                     </thead>
                     <tbody>
 INICIO;
@@ -55,6 +58,11 @@ INICIO;
                             <td>%s</td>
                             <td>%s</td>
                             <td>%s</td>
+                            <td>
+                            <a href="excluirReserva.php?email=%s&ambiente=%s&data=%s&hora=%s">
+                            <div class="divIcon"></div>
+                            </a>
+                            </td>
                         </tr>
 CORPO;
 
@@ -70,7 +78,7 @@ CORPO;
         echo $iniciotabela;
     }
     else{
-        $todasReservas = R::find('reserva', ' email_resevante LIKE ? ', [$_SESSION['email']]);
+        $todasReservas = R::find('reserva', ' email_reservante LIKE ? ', [$_SESSION['email']]);
 
         if (!$todasReservas) {
             # code...
@@ -86,9 +94,13 @@ CORPO;
 
             printf(
                 $corpotabela,
-                $value->nome_resevante,
+                $value->nome_reservante,
                 $value->ambiente,
                 $dataFormatada,
+                $value->hora,
+                $value->email_reservante,
+                $value->ambiente,
+                $value->data,
                 $value->hora
             );
         }
