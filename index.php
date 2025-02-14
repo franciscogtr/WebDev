@@ -53,7 +53,7 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
             <select id="excluir" onchange="redirecionarExcluir()">
                     <option value="">Remover</option>
                     <option value="excluirambiente.php">Ambiente</option>
-                    <option value="excluirusuario.php">Usuário</option>
+                    <option value="listausuarios.php">Usuário</option>
                 </select>
                 <script>
                     function redirecionarExcluir() {
