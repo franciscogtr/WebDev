@@ -19,9 +19,9 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <style>
-    
-   
-    
+
+
+
 </style>
 
 <body>
@@ -48,9 +48,9 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
                     }
                 </script>
 
-            
 
-            <select id="excluir" onchange="redirecionarExcluir()">
+
+                <select id="excluir" onchange="redirecionarExcluir()">
                     <option value="">Remover</option>
                     <option value="excluirambiente.php">Ambiente</option>
                     <option value="listausuarios.php">Usuário</option>
@@ -66,7 +66,7 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
                 </script>
 
             <?php endif; ?>
-            
+
 
             <p class="pHeader"><a class="aheader" href="sobre.php">Sobre</a></p>
 
@@ -75,12 +75,12 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
 
 
     <main>
-        
+
         <h1>Salas</h1>
 
         <?php
 
-        $heredoc = <<<CARDINDEX
+        $cardUsuario = <<<CARDINDEX
 
          <div class='cardIndex'>
             <div class='item'> 
@@ -92,19 +92,51 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
 
 CARDINDEX;
 
-        if (count($salas) > 0) {
-            foreach ($salas as  $sala) {
-                printf($heredoc, $sala->imagem, $sala->nome, $sala->nome);
+        $cardVisitante = <<<CARDINDEX
+
+         <div class='cardIndex'>
+            <div class='item'> 
+                <img src="img/ambientes/%s" alt="Imagem do Ambiente">
+            </div>
+            <p class='pCard'>%s</p>
+                <p class='pCard'><a class='aCard' href="calendario.php?ambiente=%s">Ver Reservas</a></p>
+        </div>
+
+CARDINDEX;
+
+        if (isset($_SESSION['nome'])) {
+
+            if (count($salas) > 0) {
+                foreach ($salas as  $sala) {
+                    printf($cardUsuario, $sala->imagem, $sala->nome, $sala->nome);
+                }
             }
-        }
         ?>
-        <h1>Laboratórios</h1>
+            <h1>Laboratórios</h1>
+            <?php
+            if (count($labs) > 0) {
+                foreach ($labs as  $lab) {
+                    printf($cardUsuario, $lab->imagem, $lab->nome, $lab->nome);
+                }
+            }
+        } else {
+
+            if (count($salas) > 0) {
+                foreach ($salas as  $sala) {
+                    printf($cardVisitante, $sala->imagem, $sala->nome, $sala->nome);
+                }
+            }
+            ?>
+            <h1>Laboratórios</h1>
         <?php
-        if (count($labs) > 0) {
-            foreach ($labs as  $lab) {
-                printf($heredoc, $lab->imagem, $lab->nome, $lab->nome);
+            if (count($labs) > 0) {
+                foreach ($labs as  $lab) {
+                    printf($cardVisitante, $lab->imagem, $lab->nome, $lab->nome);
+                }
             }
         }
+
+
         ?>
     </main>
     <footer>

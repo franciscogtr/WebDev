@@ -5,11 +5,7 @@
             session_start();
         }
         
-        //Impede acesso de visitantes
-
-        if (!isset($_SESSION['nome'])) {
-            header('Location:login.php');
-        }
+        
 ?>
 
 <!DOCTYPE html>
@@ -35,9 +31,13 @@
     </header>
 
     <main>
-        <h2>Escolha um mês para reservar</h2>
 
         <?php
+            if (isset($_SESSION['nome'])) {
+              echo " <h2>Escolha uma data para reservar</h2> "  ;
+            } else {
+                echo "<h2>Escolha uma data para visualizar as reservas</h2>";
+            }
 
         //armazena o ambiente vindo de Index.php
         $ambiente = $_GET['ambiente'];

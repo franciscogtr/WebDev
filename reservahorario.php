@@ -5,11 +5,9 @@
             session_start();
         }
         
-        //Impede acesso de visitantes
+       
 
-        if (!isset($_SESSION['nome'])) {
-            header('Location:login.php');
-        }
+    
 
         if (isset($_GET['ambiente']) && isset($_GET['data'])) {
 
@@ -59,10 +57,15 @@
 
         
         $reservas = R::find('reserva', ' data LIKE ? ', [$dataFormatada->format('Y-m-d')]);
+
+
+        if (isset($_SESSION['nome'])) {
+            echo " <h2>Selecione os Horários para Reserva</h2> "  ;
+          } else {
+              echo "<h2> Horários Disponíveis </h2>";
+          }
          
         ?>
-
-        <h2>Selecione os Horários para Reserva</h2>
 
         <table class="reserva">
             <tbody>
@@ -91,15 +94,22 @@
 
                     // Se não estiver disponível, exibe como texto desabilitado
                     if (!$disponivel) {
-                        echo "<td><span style='color:#a0a0a0; text-decoration:none;'>$hora_formatada</span></td>";
+                        echo "<td><span style='color:#1E2026; text-decoration:line-through #3876F2 2px;'>$hora_formatada</span></td>";
                     } else {
                             // Caso esteja disponível, verifica se o horário é anterior a hora atual, no dia vigente
                         if ($hora_formatada < $horaAtual && $data == $hoje->format('Y-m-d')) {
-                            echo "<td><span style='color:##1E2026; text-decoration:line-through red 2px;'>$hora_formatada</span></td>";
+                            echo "<td><span style='color:#a0a0a0; text-decoration:none;'>$hora_formatada</span></td>";
                         }
                         else {
-                             // Caso esteja disponível, exibe o link
-                        echo "<td><a id='calendario' href='processareserva.php?hora=$hora_formatada&ambiente=$ambiente&data=$data'>$hora_formatada</a></td>";
+                                //Verifica se é um visitante e desabilita os links
+                            if (!isset($_SESSION['nome'])) {
+                                echo "<td><span style='color:#1E2026; text-decoration:none;'>$hora_formatada</span></td>";
+                            } else {
+                                
+                                echo "<td><a id='calendario' href='processareserva.php?hora=$hora_formatada&ambiente=$ambiente&data=$data'>$hora_formatada</a></td>";
+                            }
+                             // Caso esteja disponível, e seja um usuário: exibe o link
+                        
                         }
                        
                     }
