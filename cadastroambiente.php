@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['nome'], $_POST['tipo']
    
    
     if (!in_array($imagem['type'], $extensaoPermitida)) {
-        echo '<p class="msgRed">'  . 'Formato de imagem não permitido. Apenas JPG, PNG e GIF são aceitos.' . '</p>';
+        echo '<div class="msg">' . '<p class="msgRed">'  . 'Formato de imagem não permitido. Apenas JPG, PNG e GIF são aceitos.' . '</p>' .  '</div>';
         exit;
     }
 
@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['nome'], $_POST['tipo']
     $ambiente = R::findOne('ambiente', ' nome = ? ', [$_POST['nome']]);
     
     if ($ambiente) {
-        echo '<p class="msgRed">'  . 'Ambiente já Cadastrado' . '</p>';
+        echo '<div class="msg">' .  '<p class="msgRed">'  . 'Ambiente já Cadastrado' . '</p>' . '</div>';
     } 
     
     else {
@@ -113,9 +113,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['nome'], $_POST['tipo']
             $ambiente->imagem = $nomeImagem; // Salva o nome da imagem no banco
             $ambiente->tipo = $_POST['tipo'];
             R::store($ambiente);
-            echo '<p class="msgGreen">'  . 'Ambiente cadastrado com sucesso!' . '</p>';
+            echo  '<div class="msg">' . '<p class="msgGreen">'  . 'Ambiente cadastrado com sucesso!' . '</p>' . '</div>';
         } else {
-            echo '<p class="msgRed">'  . 'Erro ao carregar a imagem' . '</p>';
+            echo '<div class="msg">' . '<p class="msgRed">'  . 'Erro ao carregar a imagem' . '</p>' . '</div>';
         }
 
         // Fecha a conexão com o banco de dados

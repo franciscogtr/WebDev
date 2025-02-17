@@ -49,7 +49,7 @@ if (isset($_POST['senha']) && isset($_POST['email'])) {
            
 
          else {
-            echo '<p class="msgRed">'  . 'senha incorreta!' . '</p>';
+            echo '<div class="msg">' . '<p class="msgRed">'  . 'senha incorreta!' . '</p>' . '</div>';
         }
 
 
@@ -61,7 +61,7 @@ if (isset($_POST['senha']) && isset($_POST['email'])) {
 
 
     } else {
-        echo '<p class="msgRed">'  . 'email não cadastrado, ACESSO NEGADO.' . '</p>';
+        echo  '<div class="msg">' . '<p class="msgRed">'  . 'email não cadastrado, ACESSO NEGADO.' . '</p>' . '</div>';
     }
 }
 
