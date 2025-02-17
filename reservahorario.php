@@ -95,7 +95,7 @@
                     } else {
                             // Caso esteja disponível, verifica se o horário é anterior a hora atual, no dia vigente
                         if ($hora_formatada < $horaAtual && $data == $hoje->format('Y-m-d')) {
-                            echo "<td><span style='color:#a0a0a0; text-decoration:none;'>$hora_formatada</span></td>";
+                            echo "<td><span style='color:##1E2026; text-decoration:line-through red 2px;'>$hora_formatada</span></td>";
                         }
                         else {
                              // Caso esteja disponível, exibe o link
