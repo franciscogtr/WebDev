@@ -34,7 +34,7 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
             <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] === 'on'): ?>
 
                 <select id="cadastrar" onchange="redirecionarCadastro()">
-                    <option value="">Cadastrar</option>
+                    <option value="" disabled selected>Cadastrar</option>
                     <option value="cadastroambiente.php">Ambiente</option>
                     <option value="cadastrousuario.php">Usuário</option>
                 </select>
@@ -51,7 +51,7 @@ $labs = R::find('ambiente', ' tipo LIKE ? ', ['lab']);
 
 
                 <select id="excluir" onchange="redirecionarExcluir()">
-                    <option value="">Remover</option>
+                <option value="" disabled selected>Remover</option>
                     <option value="excluirambiente.php">Ambiente</option>
                     <option value="listausuarios.php">Usuário</option>
                 </select>
